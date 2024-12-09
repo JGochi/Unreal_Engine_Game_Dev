@@ -1,2 +1,2 @@
-﻿  the_hangman_game.cpp
-  the_hangman_game.vcxproj -> D:\Unreal Engine Game Developer\15\the_hangman_game\x64\Debug\the_hangman_game.exe
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: nierozpoznany symbol zewnętrzny main przywołany w funkcji "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+D:\Unreal Engine Game Developer\GitHub\Unreal_Engine_Game_Dev\the_hangman_game\x64\Debug\the_hangman_game.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 1
