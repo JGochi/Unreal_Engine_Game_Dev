@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Unreal Engine Game Developer\\15\\the_hangman_game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FA8E215-CB90-464A-8CEA-68EE49F9FF40}|the_hangman_game.vcxproj|D:\\Unreal Engine Game Developer\\15\\the_hangman_game\\the_hangman_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5FA8E215-CB90-464A-8CEA-68EE49F9FF40}|the_hangman_game.vcxproj|solutionrelative:the_hangman_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "the_hangman_game.cpp",
+              "DocumentMoniker": "D:\\Unreal Engine Game Developer\\15\\the_hangman_game\\the_hangman_game.cpp",
+              "RelativeDocumentMoniker": "the_hangman_game.cpp",
+              "ToolTip": "D:\\Unreal Engine Game Developer\\15\\the_hangman_game\\the_hangman_game.cpp*",
+              "RelativeToolTip": "the_hangman_game.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T15:59:11.668Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
