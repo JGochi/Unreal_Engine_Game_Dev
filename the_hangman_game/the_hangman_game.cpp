@@ -16,6 +16,10 @@ int attemptsLeft = 5;
 bool exitGame = false;
 bool gameWon = false;
 
+//Update-Dodanie zmiennych do systemu punktacji
+int score = 0;
+time_t startTime;
+
 void Initialize();
 void LoadWordsFromFile(const string& filename);
 void DrawnWord();
@@ -58,6 +62,8 @@ void Initialize()
 
 	cout << "The game started! You have " << attemptsLeft << " attempts to guess correct letters." << endl;
 	cout << "Current Word: " << displayedWord << endl;
+
+	startTime = time(nullptr);
 }
 
 void LoadWordsFromFile(const string& filename)
@@ -147,7 +153,16 @@ void Render()
 
 	if (gameWon)
 	{
+		time_t endTime = time(nullptr);
+		double timeTaken = difftime(endTime, startTime);
+
+		//PUNKTACJA
+		// 10 pkt za pozosta³e szanse
+		// 0-100 pkt za pozosta³y czas, poni¿ej 0 nie ma ujemnych pkt
+		score = (attemptsLeft * 10) + max(0, 100 - static_cast<int>(timeTaken));
+
 		cout << "You guessed the word correctly! The word was: " << drawnWord << endl;
+		cout << "Your score: " << score << endl;
 	}
 	else if (exitGame)
 	{
