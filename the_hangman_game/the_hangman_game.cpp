@@ -16,9 +16,12 @@ int attemptsLeft = 5;
 bool exitGame = false;
 bool gameWon = false;
 
-//Update-Dodanie zmiennych do systemu punktacji
+//Update no.1 - Dodanie zmiennych do systemu punktacji
 int score = 0;
 time_t startTime;
+
+//Update no.2 - Pobranie nazwy gracza 
+string playerName;
 
 void Initialize();
 void LoadWordsFromFile(const string& filename);
@@ -27,6 +30,7 @@ void GetInput();
 void UpdateGame(char playerGuess);
 void Render();
 void ShutDown();
+void SaveScore();
 
 int main()
 {
@@ -39,6 +43,7 @@ int main()
 	}
 
 	ShutDown(); //Koniec
+	SaveScore(); //Update no.2 - Zapis wyników w pliku
 
 	return 0;
 }
@@ -46,6 +51,10 @@ int main()
 void Initialize()
 {
 	cout << "Welcome to The Hangman Game!" << endl;
+
+	cout << "Enter your name: ";
+	cin >> playerName;
+
 	cout << "Loading words..." << endl;
 	LoadWordsFromFile("hasla_do_gry.txt");
 
@@ -156,7 +165,7 @@ void Render()
 		time_t endTime = time(nullptr);
 		double timeTaken = difftime(endTime, startTime);
 
-		//PUNKTACJA
+		//Update no. 1 - PUNKTACJA
 		// 10 pkt za pozosta³e szanse
 		// 0-100 pkt za pozosta³y czas, poni¿ej 0 nie ma ujemnych pkt
 		score = (attemptsLeft * 10) + max(0, 100 - static_cast<int>(timeTaken));
@@ -174,4 +183,20 @@ void ShutDown()
 {
 	//Komunikat o zakoñczeniu gry
 	cout << "Thank you for playing The Hangman." << endl;
+}
+
+void SaveScore()
+{
+	//Zapis wyniku w pliku tablica_wynikow.txt
+	ofstream file("tablica_wynikow.txt", ios::app); //Dopisanie danych do pliku bez nadpisania tych istniej¹cych
+
+	if (file.is_open())
+	{
+		file << "Player name: " << playerName << " | Score: " << score << endl;
+		file.close();
+	}
+	else
+	{
+		cout << "Failed to open the leaderboard file." << endl;
+	}
 }
