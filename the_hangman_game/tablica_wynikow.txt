@@ -4,3 +4,4 @@ Player name: Jagoda | Score: 136
 Player name: —liwka | Score: 0
 Player name: Shepard | Score: 135
 Player name: Krystyna | Score: 99
+Player name: MassEffect | Score: 124

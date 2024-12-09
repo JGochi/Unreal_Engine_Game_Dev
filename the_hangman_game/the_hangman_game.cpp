@@ -31,6 +31,7 @@ void UpdateGame(char playerGuess);
 void Render();
 void ShutDown();
 void SaveScore();
+void LeaderBoard(); //Update no.3 - wczytanie tablicy wyników
 
 int main()
 {
@@ -42,8 +43,10 @@ int main()
 		Render(); //Bie¿¹cy stan
 	}
 
+	LeaderBoard(); // Update no.3 - Wyœwietlona tablica wyników
 	ShutDown(); //Koniec
-	SaveScore(); //Update no.2 - Zapis wyników w pliku
+	//SaveScore(); //Update no.2 - Zapis wyników w pliku
+	//UPDATE - w finalnej wersji SveScore jeest realizowane w LeaderBoard
 
 	return 0;
 }
@@ -199,4 +202,30 @@ void SaveScore()
 	{
 		cout << "Failed to open the leaderboard file." << endl;
 	}
+}
+
+void LeaderBoard()
+{
+	SaveScore();
+
+	cout << endl;
+	cout << "--- Leaderboard ---" << endl;
+
+	// Otwieramy plik do odczytu
+	ifstream file("tablica_wynikow.txt");
+	if (file.is_open())
+	{
+		string line;
+		while (getline(file, line))
+		{
+			cout << line << endl; // Wyœwietlenie ka¿dej linii
+		}
+		file.close();
+	}
+	else
+	{
+		cout << "Failed to open the leaderboard file." << endl;
+	}
+
+	cout << "-------------------" << endl;
 }
