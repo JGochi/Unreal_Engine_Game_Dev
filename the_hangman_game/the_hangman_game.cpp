@@ -1,9 +1,26 @@
 #include <iostream>
 
+Initialize();
+GetInput();
+UpdateGame();
+Render();
+
+ShutDown();
+
 using namespace std;
 
 int main()
 {
-	cout << "This is The Hangman Game";
+	Initialize();
+
+	while (!exitGame)
+	{
+		GetInput();
+		UpdateGame();
+		Render();
+	}
+
+	ShutDown();
+
 	return 0;
 }
